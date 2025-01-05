@@ -7,12 +7,12 @@ package:
   version: {{ version }} 
 
 source:
-  url: https://github.com/markovmodel/{{name}}/archive/final-published-version-V1.tar.gz
+  url: https://github.com/markovmodel/{{ name }}/archive/final-published-version-V1.tar.gz
   sha256: {{ sha256 }}
 
 build:
   script: python -m pip install --no-deps --ignore-installed . -v
-  number: 0
+  number: 1
   entry_points:
     - pyemma_tutorials = pyemma_tutorials.cli:main
 
@@ -32,6 +32,8 @@ requirements:
     - nbexamples
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - pyemma_tutorials
   commands:
