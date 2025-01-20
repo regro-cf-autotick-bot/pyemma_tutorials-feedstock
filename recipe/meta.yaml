@@ -21,6 +21,8 @@ build:
 
 
 requirements:
+  host:
+    - setuptools
   build:
     - pip
   run:
